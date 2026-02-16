@@ -1,0 +1,18 @@
+a.show()
+a.setScale(5)
+screenRatio = innerHeight / innerWidth
+
+shape(1, 0.6, 1.5)
+  .scale(.6,.5)
+  .color([3, 2].smooth(1), 0.5, 0)
+  .repeat(5, 5)
+  .modulateScale(osc(() => a.fft[0],1))
+  .add(o0, 1)
+  .diff(osc(0.9,0.9,5))
+  .scale(1)
+  .out(o0)
+
+s0.initImage("https://i.imgur.com/yTmHPmU.jpeg")
+.out(o1)
+
+render()
