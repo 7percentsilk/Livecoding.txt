@@ -1,0 +1,20 @@
+
+// "mc404 sample pack preview" @by JoeyJoeyJoe
+samples('github:zhouyuyang-joey/mc404')
+setcpm(400/4)
+
+$:slowcat(
+  n("<0 1 2 3 4 5 6 7 8>").s("bd"),
+  n("<0 1 2>").s("cp"),
+  n("<0 1 2>").s("cr"),
+  n("<0 1 2>").s("rim"),
+  n("<0 1 2 3>").s("fx"),
+  n("<0 1 2 3 4 5 6>").s("hh"),
+  n("<0 1 2>").s("oh"),
+  n("<0 1 2 3 4 5 6 7>").s("perc"),
+  n("<0 1 2 3 4 5 6 7 8>").s("sd"),
+   n("<0 1 2 3 4 5 6 7>").s("tom"),
+  // n("0").s("siren").bank("mc404").cut(1)// ⬅️ Be careful! This one is a long sample
+)
+.fast(2)
+.bank("mc404")._scope()
