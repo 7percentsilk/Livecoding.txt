@@ -1,0 +1,15 @@
+a.show()
+
+shape(4)
+  .scale(() => a.fft[3]*0.3) //turn down the input volume or turn down
+the effect by multiplying with decimal bc visual is too intense
+  .out(o0)
+a.setBins(12)
+
+osc(20, 0, 2)
+// .saturate(() => a.fft[0]+1)
+  // .scale(() => a.fft[3]*0.3)
+  .blend(osc(20, 0, 2).saturate(() => a.fft[7]*2)) // gets brighter
+when the kicks play listneninf to bin 7
+
+.out(o0)

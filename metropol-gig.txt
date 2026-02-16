@@ -1,0 +1,140 @@
+setcps (0.60) ///////////////////FREE PALESTINE!!!!!!!!!!!!
+//THANK U FOR LISTENING
+///FIND ME @DEPOSITSILK ON DA GRAM
+
+//$: n("0")
+//$: n("0").s("rihanna").chop(4).loopAt(4).gain(4)
+$: n("0").s("grime")
+// $: n("0").s("grime").chop(10).gain(1.6).room(2).roomsize(1.5)
+//$: n("0").s("bassvictim:2").gain(0)
+//$: n("0").s("bassvictim:1").chop(10).gain(3).loopAt(4).delay(0.4).room(1).roomsize(0.5).lpf(10000)
+//$: n("0").s("freak:2").gain(6).delay(0.9)
+//$: n("0").s("newshit").gain(6.5)
+
+// $:n("<0 [0,2] [3 7 5] 6 7 6 [5 4 2] 10>")
+//   .scale("E:phrygian")
+//   .fast(2)
+//   .iter(2)
+//   .sometimesBy(0.5,off(1/8, hurry(2)))
+//   .s("< sawtooth sine triangle>")
+//   .lpf("<1200 250 1500 500>")
+//   .cut(.1)
+//   .delay(.5)
+//   .postgain(1)
+//    //.hush()
+// .postgain("<2 1.5>")
+
+// $:n("<[0,4,7] [0,3,7]>").scale("E:phrygian")
+//   .s("gm_celesta")
+//   .room(.7).roomsize(6)
+//   .pan("<0 0.2 0.5 0.7 1>")
+//   .fast("<1 1 2 8>")
+//  .hush()
+
+
+//hit that
+// $:note("c1 ~ eb1 ~ f1 ~ g1 ~")
+//   .sound("sine")
+//   .gain(6)
+//   .lpf(1200)
+
+// $: note("c2").sound("sine")
+// $: note("c2").sound("sawtooth").gain(0.5).lpf(600)
+
+
+//bambam
+// $: n("0 1 [4 3] 2 0 2 [~ 3]
+4").sound("cowbell").pan(0).color("cyan").lpf(1000).gain(4)//.slow(4)
+// $: n("0 1 [4 3] 2 0 2 [~ 3]
+4").sound("cowbell").pan(1).color("magenta").rev().lpf(1000).gain(4)//.slow(4)
+
+// $:s("bd:8(4,8)").s("jazz").slow(5).jux(rev).room(0.2).delay(0.2).duck(0.2).duckattack(0.2).orbit(0.3).lpf(1000).gain(2)
+
+// $: s("bd bd*2 bd bd*2").gain(1.2)
+// $: s("hh*8").gain(0.5).lpf(8000)
+// $: s("~ cp ~ cp ~ ~ cp ~").gain(0.9)
+// $: s("bh hh hh bh hh bh ~ ~").gain(0.4).room(0.4).roomsize(0.9)
+// $: s("bd ~ bd ~ bd ~ oh ~").gain(0.4).room(0.4).roomsize(0.9)
+// $: s("~ ~ rim:2 ~").gain(0.4).room(4),roomsize(0.9)
+// $: s("~ ~ oh ~").gain(0.6)
+// $: s("bd bd*2 bd bd*2").gain(1.2).sometimes(fast(2))
+// $: s("hh*8").gain(0.6).lpf(8000).every(4, x => x.fast(2))
+
+
+//casio++++numbers
+// $: sound("casio?")
+//     .n("<~ 7 ~ 5, ~ ~ 3 ~>")
+//     .speed("[1 0.5]*2")
+//     .lpf(600)
+//     .gain(3)
+// .delay(0.2)
+// .fast(2)
+//   .orbit(2)._scope()
+
+// $: sound("crow?")
+//     .n("<7 9 10 12>/2")
+//     .slow(6)
+//     .lpf(1800)
+//     .room(0.8)
+//     .gain(3.5)
+//     .delay(0.4)
+
+
+
+$_: stack(
+
+
+  // Chord Progression:
+  // Dmaj9 (D - F# - A - C# - E)
+  // A/C# (C# - E - A)
+  // Bm11 (B - D - F# - A - C#)
+  // Eadd9 (E - G# - B - F#)
+
+
+  // Chords
+  note("[D, F#, A, C#, E] | [C#m, E, A, E, C#m] | [B, D, F#, A, C#] |
+[E, G#, B, F#, E]")
+  .arp("0 1 2 3 4")
+  .slow(16)
+  .jux(rev)
+  .room(0.9)
+  .delay(1.5)
+  .sound("gm_lead_3_calliope")
+  .color("#BDEDE0")
+  .roomsize(0.9)
+  .lpf(1000)
+  .duck(0.9)
+  .decay(0.5)
+  ,
+
+
+  note("[D, F#, A, C#, E] | [C#m, E, A, E, C#m] | [B, D, F#, A, C#] |
+[E, G#, B, F#, E]")
+  .slow(16)
+  .jux(rev)
+  .room(0.9)
+  .roomsize(0.9)
+  .delay(1.5)
+  .gain(0.4)
+  .sound("gm_pad_sweep")
+  .color("#EDDDD4")
+  .lpf(1000)
+  .duck(0.9)
+  .decay(0.5),
+
+
+
+
+  // bass line
+  note("d1 | c#1 | b1 | e1 | a1 | f#1 | g#1")
+  .sound("gm_choir_aahs")
+  .slow(32)
+  .room(0.8)
+  .delay(2)
+  .jux(rev)
+  .color("#6F58C9")
+  .roomsize(0.6)
+  .decay(0.5),
+
+
+).pianoroll({vertical: true})

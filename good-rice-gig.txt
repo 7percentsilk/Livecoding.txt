@@ -1,0 +1,115 @@
+setcps(1)
+$_: n("0").s("hood").gain(5).chop(4).loopAt(3).hpf(1000).fast(2)
+
+$_: n("0").s("bassvictim:1").gain(4).chop(4).loopAt(4).room(1.5).roomsize(1.5).delay(0.3).lpf(1000).duck(0.8).transpose(5)
+
+$_: n("<7 9 10 12>/2").s("bassvictim:2?").gain(2.5).delay(0.2).room(0.6).roomsize(0.8)
+//$: n("0").s("crow:6?").gain(3)
+// $: n("~ 0 ~").s("insect?").gain(3.7)
+
+$_: n("0 1 [4 3] 2 0 2 [~ 3]
+4").sound("jazz").pan(0).color("cyan").hpf(1000).gain(3)
+$_: n("0 1 [4 3] 2 0 2 [~ 3]
+4").sound("jazz").pan(1).color("magenta").rev().hpf(1000).gain(3)
+
+$_: n(run(4)).scale("C4:pentatonic").s("bassvictim:1").chop(4).loopAt(4).slow(4).lpf(500).gain(3.7)
+
+setcps(0.68)
+$_: s("shaker_large shaker_large shaker_large shaker_large
+shaker_large shaker_large shaker_large shaker_large").fast(3)
+  .iter("<2 4 1 2>")
+  .gain(2)
+// $: s("bd bd*2 bd bd*2").gain(1.2)
+// $: s("hh*8").gain(0.5).lpf(8000)
+// $: s("~ cp ~ cp ~ ~ cp ~").gain(0.9)
+// $: s("bh hh hh bh hh bh ~ ~").gain(0.4).room(0.4).roomsize(0.9)
+// $: s("bd ~ bd ~ bd ~ oh ~").gain(0.4).room(0.4).roomsize(0.9)
+// $: s("~ ~ rim:2 ~").gain(0.4).room(4),roomsize(0.9)
+// $: s("~ ~ oh ~").gain(0.6)
+// $: s("bd bd*2 bd bd*2").gain(1.2).sometimes(fast(2))
+// $: s("hh*8").gain(0.6).lpf(8000).every(4, x => x.fast(2))
+
+$_: sound("numbers?")
+    .n("<7 9 10 12>/2")
+    .slow(6)
+    .lpf(1800)
+    .room(0.8)
+    .gain(5)
+    .delay(0.4)
+
+$_: sound("bd")
+//   //keep
+  .euclid(6, 8) // 7 kicks spread over 16 steps
+.bank("rolandd70")
+
+$_: sound("shaker_large shaker_large shaker_large shaker_large
+shaker_large shaker_large shaker_large shaker_large")
+  //keep
+  .iter("<2 4 1 2>")
+  .gain(1.6)
+
+// $: sound("lt(<3 5
+2>,8)").bank("rolandd70").legato(0.7).sustain(0.2).gain(0.6)
+// //keep
+//   .hpf(tri.range(4000, 10000))
+
+// $: sound("hh!<4 8 2>").bank("rolandd70")
+// $: sound("~ sd ~ ~ ~ sd ~ ~").bank("rolandd70")
+
+$_: stack(
+
+
+  // Chord Progression:
+  // Dmaj9 (D - F# - A - C# - E)
+  // A/C# (C# - E - A)
+  // Bm11 (B - D - F# - A - C#)
+  // Eadd9 (E - G# - B - F#)
+
+
+  // Chords
+  note("[D, F#, A, C#, E] | [C#m, E, A, E, C#m] | [B, D, F#, A, C#] |
+[E, G#, B, F#, E]")
+  .arp("0 1 2 3 4")
+  .slow(16)
+  .jux(rev)
+  .room(0.9)
+  .delay(1.5)
+  .sound("gm_lead_3_calliope")
+  .color("#BDEDE0")
+  .roomsize(0.9)
+  .lpf(1000)
+  .duck(0.9)
+  .decay(0.5)
+  ,
+
+
+  note("[D, F#, A, C#, E] | [C#m, E, A, E, C#m] | [B, D, F#, A, C#] |
+[E, G#, B, F#, E]")
+  .slow(16)
+  .jux(rev)
+  .room(0.9)
+  .roomsize(0.9)
+  .delay(1.5)
+  .gain(0.4)
+  .sound("gm_pad_sweep")
+  .color("#EDDDD4")
+  .lpf(1000)
+  .duck(0.9)
+  .decay(0.5),
+
+
+
+
+  // bass line
+  note("d1 | c#1 | b1 | e1 | a1 | f#1 | g#1")
+  .sound("gm_choir_aahs")
+  .slow(32)
+  .room(0.8)
+  .delay(2)
+  .jux(rev)
+  .color("#6F58C9")
+  .roomsize(0.6)
+  .decay(0.5),
+
+
+).pianoroll({vertical: true})

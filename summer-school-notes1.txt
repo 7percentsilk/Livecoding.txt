@@ -1,0 +1,63 @@
+fast("1, 2", note (" c e f g"))
+$_:note (" c e f g").fast("1, 2")
+
+same thing
+
+$_: note (" c e f g").jux(fast("1, 2"))
+.pianoroll()
+
+folkharp is nice sound
+$_: note (" c e f g").lastOf(4, rev)
+
+hpf("0 1000 2000 300*3 1000*3").note(" c e f g")
+.sound("folkharp")
+
+hpf("0 1000 2000 [5000 2000] 300*3 [-2300] 1000*3").note(" c e f g")
+
+$_: note (" c e f g").lastOf(3, x=> x.hpf("1000 2000").fast(2))
+
+$:n("0 1 2 3 4 5".add.squeeze("8 <4 2> [5 4]"))
+.jux(rev)
+
+samples('github:sonidosingapura/blu-mar-ten')
+set cps(0.3)
+s("bmt_breaks:1")
+.splice(8, "0 1 - - 0 4 [0 2] 7".add("<0 3>"))
+// $: n("0 1 2 3 4 5".add("<8 4 2>"))
+
+.orbit(2) groups everything together
+.duck(2)
+does something
+
+note("c e f g").sound("folkharp")
+.off(0.125, x => x.add(note(12)))
+
+sound("bh sd ht").expand(" 3 2 1 1 2 3")
+.speed(2)
+  .chunk(3, hurry(2))
+.pace(8)
+.jux(rev)
+._pianoroll()
+note("c4 a f e".add("<0 7 -12>")).sound("supersaw")
+.off(0.125, add(note (7 )))
+.penv(3)
+.gain(1.1)
+  .legato(0.25)
+  .room(0.3)
+.chunk(4, fast(2))
+.jux(press)
+
+sound("cp*2")
+.hpf(2000).room(0.5).sz(1.4)
+
+good example of how to make performance.
+
+sound("bd").euclidish(3, 8, 0.5)
+
+sound("bd").euclidish(3, 8, sine.slow(8))
+malcom braff
+
+note(" c e f g").sound("supersaw")
+.hpf(sine.range(100, 3000).slow(8))
+.fast(4)
+this is sick

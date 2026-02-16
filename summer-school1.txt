@@ -1,0 +1,67 @@
+samples('github:sonidosingapura/blu-mar-ten')
+
+setcpm(120/4)
+
+$: sound("bmt_breaks:6")
+  .room(0.5)
+  .jux(rev)
+.gain(sine.range(0.01, 0.2).slow(9))
+//.hurry(0.75)
+//.fast(2)
+//.hush()
+
+//opening
+_$: note(" c e f g")
+  .sound("siren")
+  .hurry(4)
+  //.speed(9)
+  .room(0.3)
+  .gain(6)
+  .distort(0.1)
+  .jux(rev)
+.lpf(sine.range(100, 5000).slow(9))
+//.fast(sine.range(1, 4).slow(5))
+//.hush()
+
+//hi
+$: note("c4 a f e".add("<0 7 -12>")).sound("guiro")
+.off(0.125, add(note (7 )))
+.penv(3)
+.gain(8)
+  .legato(0.25)
+  .room(0.3)
+.chunk(4, fast(2))
+.jux(rev)
+.hush()
+
+$: sound("[cp*2] oh")
+  .note ("c d g")
+.hpf(2000)
+  .room(0.5)
+  .squeeze(1.4)
+.hush()
+
+$: note(" c a f e").sound("supersaw")
+.hpf(sine.range(100, 3000).slow(8))
+.fast(4)
+//.sometimesBy(0.9, x=>x.n(rand.range(0,8)).sound("crow").note(36))
+//change this line
+.hush()
+
+$:sound("bh sd ht, anvil").expand(" 3 2 1 1 2 3")
+.speed(3)
+  .chunk(2, hurry(4))
+.pace(6)
+.jux(press)
+.gain(0.3)
+.hush()
+
+$: note("e a b e2").sound("clavisynth")
+.off(0.125, x => x.add(note(12)))
+//.speed(-2)
+.hush()
+
+//$: note("e2 e#3 e4 e#5").sound("clavisynth")
+//.off(0.125, x => x.add(note(12)))
+
+$: sound("samples").loopAt(2).cut(1)
