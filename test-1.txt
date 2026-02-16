@@ -1,0 +1,41 @@
+//setCps(140/60/4)
+
+$: n(irand(10)
+  .sub(7).seg(16))
+  .scale("c:minor")
+  .sound("crow")
+  .slow(20)
+.room (.5)
+.delay(.3)
+.gain(0.1)
+
+$: n("c1 e1 f1 g1") 
+  .sound("folkharp")
+  .hpf("0 1000 2000 300*3 1000*3")
+  .delay(.8)
+  .room(.9)
+
+$:sound("bh sd ht").expand(" 3 2 1 1 2 3")
+.speed(2)
+  .chunk(3, hurry(2))
+.pace(8)
+.jux(rev)
+.room(.2)
+.delay(.1)
+
+$:sound("cp*2[cp]")
+.hpf(2000).room(0.5).sz(1.4)
+.gain(0.5)
+
+$: sound("{bd bd/1 bd/2 bd/3, ~ ~ hh [~ cp] hh*3}")
+
+$: n("0 0 -2 -1 0 0 -3 -1")
+  .scale("c:minor")
+  .sound("sawtooth")
+  .slow(8)
+  .room(.6)
+  .delay(.08)
+  .gain(0.65)
+  .room(0.3)
+
+$_: n("eb4 d4 b4 a4 b4").sound("piano")
